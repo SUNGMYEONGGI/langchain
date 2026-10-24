@@ -102,7 +102,7 @@ class RecursiveJsonSplitter:
                     # Add item to current chunk
                     self._set_nested_dict(chunks[-1], new_path, value)
                 else:
-                    if chunk_size >= self.min_chunk_size:
+                    if chunks[-1] and chunk_size >= self.min_chunk_size:
                         # Chunk is big enough, start a new chunk
                         chunks.append({})
 
